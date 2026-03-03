@@ -66,7 +66,7 @@ nav {
 .nav-links a:hover { color: var(--gold); }
 
 /* ══════════════════════════════
-   HERO — full concert-poster layout
+   HERO 
 ══════════════════════════════ */
 .hero {
   min-height: 100vh;
@@ -289,6 +289,7 @@ nav {
   font-size:clamp(2.5rem,4vw,3.5rem); color:var(--cream); margin-bottom:3rem;
 }
 
+.tracklist { border-top:1px solid rgba(196,170,132,0.1); }
 .track {
   display:grid; grid-template-columns:2.5rem 1fr auto auto;
   gap:1.5rem; align-items:center;
@@ -298,6 +299,12 @@ nav {
 }
 .track:hover { padding-left:0.5rem; background:rgba(200,132,26,0.04); }
 
+.track-info h3 { font-family:'Libre Baskerville',serif; font-size:1rem; color:var(--cream); }
+.track-n { font-family:'Bebas Neue',sans-serif; font-size:1.1rem; color:var(--smoke); text-align:right; }
+.track-dur { font-family:'Special Elite',cursive; font-size:0.85rem; color:var(--smoke); }
+.track-btn { width:30px; height:30px; border-radius:50%; border:1px solid rgba(200,132,26,0.35); display:flex; align-items:center; justify-content:center; color:var(--amber); font-size:0.6rem; }
+
+.streaming-row { margin-top:2rem; display:flex; align-items:center; gap:1.5rem; flex-wrap:wrap; }
 .streaming-link {
   font-family:'Bebas Neue',sans-serif; font-size:0.85rem;
   letter-spacing:0.2em; color:var(--amber);
@@ -306,18 +313,37 @@ nav {
 .streaming-link:hover { color:var(--gold); }
 
 /* ══════════════════════════════
+   PULL QUOTE
+══════════════════════════════ */
+.quote-banner {
+  background: var(--rust);
+  padding: 5rem;
+  text-align:center; position:relative; overflow:hidden;
+}
+.quote-text {
+  font-family:'Playfair Display',serif; font-style:italic;
+  font-size:clamp(1.3rem,2.5vw,1.9rem); color:var(--cream);
+  max-width:800px; margin:0 auto 1.5rem; line-height:1.5;
+}
+.quote-attr { font-family:'Bebas Neue',sans-serif; font-size:0.85rem; letter-spacing:0.4em; color:rgba(237,224,200,0.45); }
+
+/* ══════════════════════════════
    SHOWS
 ══════════════════════════════ */
 .shows {
   padding: 6rem 5rem;
   max-width:1300px; margin:0 auto;
 }
+.show-list { border-top:1px solid rgba(196,170,132,0.1); }
 .show {
   display:grid; grid-template-columns:110px 1fr auto;
   gap:2rem; align-items:center;
   padding:1.4rem 0;
   border-bottom:1px solid rgba(196,170,132,0.07);
 }
+.show-date .mo { font-family:'Bebas Neue',sans-serif; font-size:0.8rem; letter-spacing:0.3em; color:var(--amber); display:block; }
+.show-date .dy { font-family:'Bebas Neue',sans-serif; font-size:3.2rem; color:var(--cream); line-height:0.9; display:block; }
+.show-info h3 { font-family:'Libre Baskerville',serif; font-size:1.05rem; color:var(--cream); }
 
 .show-tix {
   font-family:'Bebas Neue',sans-serif; font-size:0.85rem;
@@ -336,7 +362,6 @@ nav {
   padding: 7rem 5rem;
   text-align:center; position:relative;
 }
-
 .contact-grid {
   display:grid; grid-template-columns:repeat(3,1fr);
   gap:1.5rem; max-width:720px; margin:0 auto;
@@ -344,21 +369,22 @@ nav {
 .contact-card {
   border:1px solid rgba(196,170,132,0.1); padding:2rem 1.5rem;
 }
+.contact-card h3 { font-family:'Bebas Neue',sans-serif; font-size:0.85rem; letter-spacing:0.35em; color:var(--amber); margin-bottom:0.6rem; }
 
 /* ══════════════════════════════
-   FOOTER + NULL POINT LOGO
+   FOOTER + NULL POINT LOGO (ICI)
 ══════════════════════════════ */
 footer {
   background: #080604;
   border-top:1px solid rgba(196,170,132,0.07);
-  padding:3rem 5rem;
+  padding:4rem 5rem;
   display:flex; justify-content:space-between; align-items:center;
 }
 
 .footer-credits {
   display: flex;
   flex-direction: column;
-  gap: 0.8rem;
+  gap: 1rem;
 }
 
 .footer-credits p {
@@ -372,34 +398,37 @@ footer {
 .npd-signature {
   display: flex;
   align-items: center;
-  gap: 0.7rem;
+  gap: 0.8rem;
   text-decoration: none;
+  transition: opacity 0.3s;
 }
+.npd-signature:hover { opacity: 0.7; }
 
 .npd-logo-box {
-  width: 26px; height: 26px;
+  width: 28px; height: 28px;
   border: 1px solid var(--amber);
   display: flex; align-items: center; justify-content: center;
   position: relative;
 }
 .npd-logo-box span {
   font-family: 'Bebas Neue', sans-serif;
-  font-size: 0.8rem; color: var(--amber);
-  margin-top: 1px;
+  font-size: 0.9rem; color: var(--amber);
+  margin-top: 2px;
 }
+/* Le fameux "Point" de Null Point */
 .npd-logo-box::after {
   content: ''; position: absolute;
-  width: 3px; height: 3px; background: var(--amber);
+  width: 4px; height: 4px; background: var(--amber);
   bottom: 4px; right: 4px;
 }
 
 .npd-text {
   font-family: 'Oswald', sans-serif;
   font-size: 0.65rem; font-weight: 300;
-  letter-spacing: 0.2em; text-transform: uppercase;
+  letter-spacing: 0.25em; text-transform: uppercase;
   color: var(--smoke);
 }
-.npd-text b { color: var(--aged); font-weight: 600; }
+.npd-text b { color: var(--cream); font-weight: 600; }
 
 .social-row { display:flex; gap:1.5rem; }
 .social-row a {
@@ -421,7 +450,7 @@ footer {
   .hero-photo-col { display:none; }
   .about { grid-template-columns:1fr; padding:4rem 2rem; }
   .contact-grid { grid-template-columns:1fr; }
-  footer { flex-direction:column; gap:2rem; padding:3rem 2rem; text-align:center; }
+  footer { flex-direction:column; gap:2.5rem; padding:4rem 2rem; text-align:center; }
   .footer-credits { align-items: center; }
 }
 </style>
@@ -461,6 +490,100 @@ footer {
   <div class="hero-photo-col">
     <div class="photo-bg"></div>
     <div class="vinyl"></div>
+  </div>
+</section>
+
+<div class="band">
+  <span class="band-text">Blues</span>
+  <div class="band-rule"></div>
+  <span class="band-text">Rock</span>
+  <div class="band-rule"></div>
+  <span class="band-text">Nashville</span>
+  <div class="band-rule"></div>
+  <span class="band-text">Live Music</span>
+  <div class="band-rule"></div>
+  <span class="band-text">Guitar</span>
+  <div class="band-rule"></div>
+  <span class="band-text">Soul</span>
+</div>
+
+<section class="about" id="about">
+  <div class="about-photo">
+    <div class="about-photo-frame">
+      <div class="corner corner-tl"></div>
+      <div class="corner corner-tr"></div>
+      <div class="corner corner-bl"></div>
+      <div class="corner corner-br"></div>
+      PHOTO OF RAY<br>[ candid / live ]
+    </div>
+  </div>
+  <div class="about-text">
+    <p class="section-eyebrow">The Man</p>
+    <h2>Born with a <em>guitar pick</em><br>in his hand.</h2>
+    <p class="placeholder-copy">[ Ray — I need 2–3 paragraphs from you here. Talk like you talk — don't overthink it. ]</p>
+    <p class="placeholder-copy">[ Key influences, artists you love, what your sound is and where it comes from. ]</p>
+  </div>
+</section>
+
+<section class="music" id="music">
+  <div class="music-inner">
+    <p class="section-eyebrow">Discography</p>
+    <h2>The Music</h2>
+    <div class="tracklist">
+      <div class="track">
+        <span class="track-n">01</span>
+        <div class="track-info">
+          <h3>[Song Title]</h3>
+          <span class="meta">Album / Single · 2024</span>
+        </div>
+        <span class="track-dur">4:22</span>
+        <div class="track-btn">▶</div>
+      </div>
+      </div>
+    <div class="streaming-row">
+      <a href="#" class="streaming-link">Spotify</a>
+      <a href="#" class="streaming-link">Apple Music</a>
+      <a href="#" class="streaming-link">YouTube</a>
+    </div>
+  </div>
+</section>
+
+<div class="quote-banner">
+  <p class="quote-text">"The real stuff, played loud and played right."</p>
+  <p class="quote-attr">— Nashville Scene · 2025</p>
+</div>
+
+<section class="shows" id="shows">
+  <p class="section-eyebrow">On the Road</p>
+  <h2>Upcoming <span>Shows</span></h2>
+  <div class="show-list">
+    <div class="show">
+      <div class="show-date"><span class="mo">Mar</span><span class="dy">24</span></div>
+      <div class="show-info">
+        <h3>The 5 Spot</h3>
+        <span>Nashville, TN · Doors 8pm</span>
+      </div>
+      <a href="#" class="show-tix">Tickets</a>
+    </div>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <p class="section-eyebrow">Get in Touch</p>
+  <h2>Book. Connect. <em>Listen.</em></h2>
+  <div class="contact-grid">
+    <div class="contact-card">
+      <h3>Booking</h3>
+      <a href="mailto:ray@martin.com">ray@martin.com</a>
+    </div>
+    <div class="contact-card">
+      <h3>Socials</h3>
+      <p>Instagram · Facebook</p>
+    </div>
+    <div class="contact-card">
+      <h3>EPK</h3>
+      <a href="#">Download</a>
+    </div>
   </div>
 </section>
 
