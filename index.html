@@ -76,7 +76,6 @@ nav {
   overflow: hidden;
 }
 
-/* Left: poster text column */
 .hero-text-col {
   display: flex; flex-direction: column; justify-content: flex-end;
   padding: 7rem 3rem 5rem 5rem;
@@ -84,7 +83,6 @@ nav {
   background: linear-gradient(to right, rgba(14,11,7,0.98) 60%, rgba(14,11,7,0.7) 100%);
 }
 
-/* Decorative horizontal rules — poster style */
 .poster-rule {
   width: 100%;
   height: 3px;
@@ -105,7 +103,6 @@ nav {
   margin-bottom: 0.8rem;
 }
 
-/* BIG stacked Bebas name */
 .hero-name {
   font-family: 'Bebas Neue', sans-serif;
   line-height: 0.88;
@@ -125,7 +122,6 @@ nav {
   -webkit-text-stroke: 1px var(--amber);
 }
 
-/* Decorative banner beneath name */
 .hero-banner {
   margin-top: 1rem;
   background: var(--amber);
@@ -169,7 +165,6 @@ nav {
 }
 .btn-ghost:hover { border-color:var(--amber); color:var(--amber); }
 
-/* Right: photo column */
 .hero-photo-col {
   position: relative;
   overflow: hidden;
@@ -177,29 +172,15 @@ nav {
 .hero-photo-col .photo-bg {
   position: absolute;
   inset: 0;
-
   background:
     linear-gradient(to left, rgba(14,11,7,0.25) 0%, rgba(14,11,7,0.85) 100%),
     linear-gradient(to bottom, rgba(14,11,7,0.15) 0%, rgba(14,11,7,0.75) 100%),
     url('ray-hero.png');
-
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
 }
-.photo-placeholder-label {
-  position: absolute; top:50%; left:50%;
-  transform: translate(-50%,-50%);
-  font-family:'Oswald',sans-serif; font-weight:200;
-  font-size:0.7rem; letter-spacing:0.4em;
-  color: rgba(200,132,26,0.3);
-  border: 1px dashed rgba(200,132,26,0.2);
-  padding: 5rem 3rem;
-  text-align:center;
-  white-space: nowrap;
-}
 
-/* Spinning vinyl — top right corner */
 .vinyl {
   position: absolute; top:2rem; right:2rem;
   width: 200px; height:200px; border-radius:50%;
@@ -246,9 +227,6 @@ nav {
   max-width:1300px; margin:0 auto;
   padding: 6rem 5rem; gap:5rem; align-items:center;
 }
-.about-photo {
-  position:relative;
-}
 .about-photo-frame {
   aspect-ratio:3/4;
   background: linear-gradient(160deg, #2e1c06, #1a1108);
@@ -259,17 +237,7 @@ nav {
   color:rgba(200,132,26,0.3);
   text-align:center;
   position:relative; overflow:hidden;
-  /* torn-edge top */
 }
-.about-photo-frame::before {
-  content:'';
-  position:absolute; inset:0;
-  background: repeating-linear-gradient(
-    -45deg, transparent, transparent 12px,
-    rgba(200,132,26,0.025) 12px, rgba(200,132,26,0.025) 13px
-  );
-}
-/* Decorative corner marks — poster style */
 .corner { position:absolute; width:20px; height:20px; }
 .corner-tl { top:0; left:0; border-top:2px solid var(--amber); border-left:2px solid var(--amber); }
 .corner-tr { top:0; right:0; border-top:2px solid var(--amber); border-right:2px solid var(--amber); }
@@ -315,35 +283,12 @@ nav {
   padding: 6rem 5rem;
   position:relative; overflow:hidden;
 }
-.music::before {
-  content:'"';
-  position:absolute; bottom:-3rem; right:2rem;
-  font-family:'Bebas Neue',sans-serif;
-  font-size:25rem; line-height:1;
-  color:rgba(200,132,26,0.04); pointer-events:none;
-}
-
 .music-inner { max-width:1300px; margin:0 auto; }
-
-.music .section-eyebrow {
-  font-family:'Bebas Neue',sans-serif; font-size:0.9rem;
-  letter-spacing:0.5em; color:var(--amber);
-  margin-bottom:1.2rem;
-  display:flex; align-items:center; gap:1rem;
-}
-.music .section-eyebrow::after {
-  content:''; flex:1; height:1px;
-  background:linear-gradient(to right, rgba(200,132,26,0.4),transparent);
-}
-
 .music h2 {
   font-family:'Playfair Display',serif; font-weight:900; font-style:italic;
   font-size:clamp(2.5rem,4vw,3.5rem); color:var(--cream); margin-bottom:3rem;
 }
 
-.tracklist {
-  border-top:1px solid rgba(196,170,132,0.1);
-}
 .track {
   display:grid; grid-template-columns:2.5rem 1fr auto auto;
   gap:1.5rem; align-items:center;
@@ -352,41 +297,7 @@ nav {
   cursor:pointer; transition:padding-left 0.2s;
 }
 .track:hover { padding-left:0.5rem; background:rgba(200,132,26,0.04); }
-.track-n {
-  font-family:'Bebas Neue',sans-serif; font-size:1.1rem;
-  color:var(--smoke); text-align:right; line-height:1;
-}
-.track-info h3 {
-  font-family:'Libre Baskerville',serif; font-size:1rem;
-  color:var(--cream); margin-bottom:0.2rem;
-}
-.track-info .meta {
-  font-family:'Oswald',sans-serif; font-weight:200;
-  font-size:0.68rem; letter-spacing:0.25em;
-  color:var(--smoke); text-transform:uppercase;
-}
-.track-dur {
-  font-family:'Special Elite',cursive; font-size:0.85rem; color:var(--smoke);
-}
-.track-btn {
-  width:30px; height:30px; border-radius:50%;
-  border:1px solid rgba(200,132,26,0.35);
-  display:flex; align-items:center; justify-content:center;
-  color:var(--amber); font-size:0.6rem;
-  transition:all 0.2s;
-}
-.track:hover .track-btn { background:var(--amber); color:var(--ink); border-color:var(--amber); }
-.ph-track { opacity:0.3; font-style:italic; }
 
-.streaming-row {
-  margin-top:2rem;
-  display:flex; align-items:center; gap:1.5rem; flex-wrap:wrap;
-}
-.streaming-label {
-  font-family:'Oswald',sans-serif; font-weight:200;
-  font-size:0.65rem; letter-spacing:0.4em; text-transform:uppercase;
-  color:var(--smoke);
-}
 .streaming-link {
   font-family:'Bebas Neue',sans-serif; font-size:0.85rem;
   letter-spacing:0.2em; color:var(--amber);
@@ -395,111 +306,27 @@ nav {
 .streaming-link:hover { color:var(--gold); }
 
 /* ══════════════════════════════
-   PULL QUOTE — poster banner
-══════════════════════════════ */
-.quote-banner {
-  background: var(--rust);
-  padding: 5rem;
-  text-align:center; position:relative; overflow:hidden;
-}
-.quote-banner::before {
-  content:'\201C';
-  position:absolute; top:-1rem; left:1rem;
-  font-family:'Playfair Display',serif; font-size:14rem; line-height:1;
-  color:rgba(255,255,255,0.06); pointer-events:none;
-}
-/* torn paper edge top */
-.quote-banner::after {
-  content:'';
-  position:absolute; top:0; left:0; right:0; height:6px;
-  background: repeating-linear-gradient(
-    90deg,
-    var(--bourbon) 0px, var(--bourbon) 8px,
-    var(--rust) 8px, var(--rust) 18px,
-    var(--bourbon) 18px, var(--bourbon) 22px,
-    var(--rust) 22px, var(--rust) 30px
-  );
-  opacity:0.6;
-}
-.quote-text {
-  font-family:'Playfair Display',serif; font-style:italic;
-  font-size:clamp(1.3rem,2.5vw,1.9rem); color:var(--cream);
-  max-width:800px; margin:0 auto 1.5rem; line-height:1.5;
-  position:relative; z-index:1;
-}
-.ph-badge {
-  display:inline-block;
-  font-family:'Oswald',sans-serif; font-size:0.6rem;
-  letter-spacing:0.2em; text-transform:uppercase;
-  color:var(--amber); border:1px dashed rgba(200,132,26,0.45);
-  padding:0.15rem 0.5rem; margin-left:0.6rem;
-  vertical-align:middle; opacity:0.7;
-}
-.quote-attr {
-  font-family:'Bebas Neue',sans-serif; font-size:0.85rem;
-  letter-spacing:0.4em; color:rgba(237,224,200,0.45);
-  position:relative; z-index:1;
-}
-
-/* ══════════════════════════════
    SHOWS
 ══════════════════════════════ */
 .shows {
   padding: 6rem 5rem;
   max-width:1300px; margin:0 auto;
 }
-.shows .section-eyebrow {
-  font-family:'Bebas Neue',sans-serif; font-size:0.9rem;
-  letter-spacing:0.5em; color:var(--amber);
-  margin-bottom:1.2rem;
-  display:flex; align-items:center; gap:1rem;
-}
-.shows .section-eyebrow::after {
-  content:''; flex:1; height:1px;
-  background:linear-gradient(to right,rgba(200,132,26,0.4),transparent);
-}
-.shows h2 {
-  font-family:'Playfair Display',serif; font-weight:900;
-  font-size:clamp(2.5rem,4vw,3.5rem); color:var(--cream); margin-bottom:3rem;
-}
-.shows h2 span { font-style:italic; color:var(--gold); }
-
-.show-list { border-top:1px solid rgba(196,170,132,0.1); }
 .show {
   display:grid; grid-template-columns:110px 1fr auto;
   gap:2rem; align-items:center;
   padding:1.4rem 0;
   border-bottom:1px solid rgba(196,170,132,0.07);
-  transition:padding-left 0.2s;
 }
-.show:hover { padding-left:0.5rem; }
-.show-date { text-align:center; }
-.show-date .mo {
-  font-family:'Bebas Neue',sans-serif; font-size:0.8rem;
-  letter-spacing:0.3em; color:var(--amber); display:block;
-}
-.show-date .dy {
-  font-family:'Bebas Neue',sans-serif; font-size:3.2rem;
-  color:var(--cream); line-height:0.9; display:block;
-}
-.show-info h3 {
-  font-family:'Libre Baskerville',serif; font-size:1.05rem;
-  color:var(--cream); margin-bottom:0.3rem;
-}
-.show-info span {
-  font-family:'Oswald',sans-serif; font-weight:200;
-  font-size:0.68rem; letter-spacing:0.25em;
-  color:var(--smoke); text-transform:uppercase;
-}
+
 .show-tix {
   font-family:'Bebas Neue',sans-serif; font-size:0.85rem;
   letter-spacing:0.25em; color:var(--amber);
   border:1px solid rgba(200,132,26,0.4);
   padding:0.5rem 1.3rem; text-decoration:none;
-  transition:all 0.2s; white-space:nowrap;
+  transition:all 0.2s;
 }
 .show-tix:hover { background:var(--amber); color:var(--ink); }
-.ph-show { opacity:0.3; }
 
 /* ══════════════════════════════
    CONTACT
@@ -507,83 +334,73 @@ nav {
 .contact {
   background: var(--ink);
   padding: 7rem 5rem;
-  text-align:center; position:relative; overflow:hidden;
+  text-align:center; position:relative;
 }
-/* Poster-style big background type */
-.contact-bg-text {
-  position:absolute; top:50%; left:50%;
-  transform:translate(-50%,-50%);
-  font-family:'Bebas Neue',sans-serif;
-  font-size:clamp(8rem,18vw,18rem);
-  color:rgba(200,132,26,0.035);
-  white-space:nowrap; pointer-events:none;
-  letter-spacing:0.1em;
-}
-.contact .section-eyebrow {
-  font-family:'Bebas Neue',sans-serif; font-size:0.9rem;
-  letter-spacing:0.5em; color:var(--amber);
-  margin-bottom:1.2rem; justify-content:center;
-  display:flex; align-items:center; gap:1rem;
-}
-.contact .section-eyebrow::before,
-.contact .section-eyebrow::after {
-  content:''; width:60px; height:1px;
-  background:rgba(200,132,26,0.4);
-}
-.contact h2 {
-  font-family:'Playfair Display',serif; font-weight:900; font-style:italic;
-  font-size:clamp(2.5rem,4vw,3.5rem); color:var(--cream);
-  margin-bottom:0.8rem; position:relative; z-index:1;
-}
-.contact > p {
-  font-family:'Special Elite',cursive; font-size:0.95rem; font-style:italic;
-  color:var(--smoke); margin-bottom:3.5rem; position:relative; z-index:1;
-}
+
 .contact-grid {
   display:grid; grid-template-columns:repeat(3,1fr);
   gap:1.5rem; max-width:720px; margin:0 auto;
-  position:relative; z-index:1;
 }
 .contact-card {
   border:1px solid rgba(196,170,132,0.1); padding:2rem 1.5rem;
-  transition:border-color 0.25s;
-  position:relative;
 }
-.contact-card:hover { border-color:rgba(200,132,26,0.35); }
-/* corner marks on cards */
-.contact-card::before {
-  content:''; position:absolute; top:-1px; left:-1px;
-  width:12px; height:12px;
-  border-top:2px solid var(--amber); border-left:2px solid var(--amber);
-  opacity:0; transition:opacity 0.25s;
-}
-.contact-card:hover::before { opacity:1; }
-.contact-card .icon { font-size:1.4rem; margin-bottom:0.75rem; }
-.contact-card h3 {
-  font-family:'Bebas Neue',sans-serif; font-size:0.85rem;
-  letter-spacing:0.35em; color:var(--amber); margin-bottom:0.6rem;
-}
-.contact-card a, .contact-card p {
-  font-family:'Libre Baskerville',serif; font-size:0.85rem;
-  color:var(--aged); text-decoration:none; margin:0;
-}
-.contact-card a:hover { color:var(--gold); }
 
 /* ══════════════════════════════
-   FOOTER
+   FOOTER + NULL POINT LOGO
 ══════════════════════════════ */
 footer {
   background: #080604;
   border-top:1px solid rgba(196,170,132,0.07);
-  padding:2rem 5rem;
+  padding:3rem 5rem;
   display:flex; justify-content:space-between; align-items:center;
 }
-footer p {
+
+.footer-credits {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.footer-credits p {
   font-family:'Oswald',sans-serif; font-weight:200;
   font-size:0.68rem; letter-spacing:0.25em;
   text-transform:uppercase; color:var(--smoke);
 }
-footer p span { color:var(--amber); }
+.footer-credits p span { color:var(--amber); }
+
+/* Stylized Signature for Null Point Design */
+.npd-signature {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  text-decoration: none;
+}
+
+.npd-logo-box {
+  width: 26px; height: 26px;
+  border: 1px solid var(--amber);
+  display: flex; align-items: center; justify-content: center;
+  position: relative;
+}
+.npd-logo-box span {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 0.8rem; color: var(--amber);
+  margin-top: 1px;
+}
+.npd-logo-box::after {
+  content: ''; position: absolute;
+  width: 3px; height: 3px; background: var(--amber);
+  bottom: 4px; right: 4px;
+}
+
+.npd-text {
+  font-family: 'Oswald', sans-serif;
+  font-size: 0.65rem; font-weight: 300;
+  letter-spacing: 0.2em; text-transform: uppercase;
+  color: var(--smoke);
+}
+.npd-text b { color: var(--aged); font-weight: 600; }
+
 .social-row { display:flex; gap:1.5rem; }
 .social-row a {
   font-family:'Bebas Neue',sans-serif; font-size:0.8rem;
@@ -592,35 +409,25 @@ footer p span { color:var(--amber); }
 }
 .social-row a:hover { color:var(--amber); }
 
-/* ══════════════════════════════
-   ANIMATION
-══════════════════════════════ */
 @keyframes fadeUp {
   from { opacity:0; transform:translateY(20px); }
   to   { opacity:1; transform:translateY(0); }
 }
 
-/* ══════════════════════════════
-   RESPONSIVE
-══════════════════════════════ */
 @media (max-width:768px) {
   nav { padding:1rem 1.5rem; }
   .nav-links { display:none; }
   .hero { grid-template-columns:1fr; }
   .hero-photo-col { display:none; }
-  .hero-text-col { padding:7rem 2rem 4rem; }
-  .about { grid-template-columns:1fr; padding:4rem 2rem; gap:2rem; }
-  .music,.shows,.contact { padding-left:2rem; padding-right:2rem; }
+  .about { grid-template-columns:1fr; padding:4rem 2rem; }
   .contact-grid { grid-template-columns:1fr; }
-  .show { grid-template-columns:80px 1fr; }
-  .show-tix { display:none; }
-  footer { flex-direction:column; gap:1rem; padding:2rem; }
+  footer { flex-direction:column; gap:2rem; padding:3rem 2rem; text-align:center; }
+  .footer-credits { align-items: center; }
 }
 </style>
 </head>
 <body>
 
-<!-- ── NAV ── -->
 <nav>
   <a href="#" class="nav-wordmark">Ray Martin</a>
   <ul class="nav-links">
@@ -631,7 +438,6 @@ footer p span { color:var(--amber); }
   </ul>
 </nav>
 
-<!-- ── HERO ── -->
 <section class="hero" id="home">
   <div class="hero-text-col">
     <div class="poster-rule"></div>
@@ -640,7 +446,7 @@ footer p span { color:var(--amber); }
       <span class="first">Ray</span>
       <span class="last">Martin</span>
     </h1>
-    <div class="hero-banner" style="opacity:0;animation:fadeUp 0.9s ease 0.6s forwards;">
+    <div class="hero-banner">
       Blues · Rock · Nashville
     </div>
     <div class="poster-rule thin"></div>
@@ -658,167 +464,16 @@ footer p span { color:var(--amber); }
   </div>
 </section>
 
-<!-- ── AMBER BAND ── -->
-<div class="band">
-  <span class="band-text">Blues</span>
-  <div class="band-rule"></div>
-  <span class="band-text">Rock</span>
-  <div class="band-rule"></div>
-  <span class="band-text">Nashville</span>
-  <div class="band-rule"></div>
-  <span class="band-text">Live Music</span>
-  <div class="band-rule"></div>
-  <span class="band-text">Guitar</span>
-  <div class="band-rule"></div>
-  <span class="band-text">Soul</span>
-</div>
-
-<!-- ── ABOUT ── -->
-<section class="about" id="about">
-  <div class="about-photo">
-    <div class="about-photo-frame">
-      <div class="corner corner-tl"></div>
-      <div class="corner corner-tr"></div>
-      <div class="corner corner-bl"></div>
-      <div class="corner corner-br"></div>
-      PHOTO OF RAY<br>[ candid / live ]
-    </div>
-  </div>
-  <div class="about-text">
-    <p class="section-eyebrow">The Man</p>
-    <h2>Born with a <em>guitar pick</em><br>in his hand.</h2>
-    <p class="placeholder-copy">[ Ray — I need 2–3 paragraphs from you here. Where you're from, how you came up with music, what it means to you. Talk like you talk — don't overthink it. ]</p>
-    <p class="placeholder-copy">[ Key influences, artists you love, what your sound is and where it comes from. ]</p>
-    <p class="placeholder-copy">[ What you're working on right now and what you want people to know before they see you live. ]</p>
-  </div>
-</section>
-
-<!-- ── MUSIC ── -->
-<section class="music" id="music">
-  <div class="music-inner">
-    <p class="section-eyebrow">Discography</p>
-    <h2>The Music</h2>
-
-    <div class="tracklist">
-      <div class="track">
-        <span class="track-n">01</span>
-        <div class="track-info">
-          <h3>[Song Title] <span class="ph-badge">placeholder</span></h3>
-          <span class="meta">Album / Single · 2024</span>
-        </div>
-        <span class="track-dur">4:22</span>
-        <div class="track-btn">▶</div>
-      </div>
-      <div class="track">
-        <span class="track-n">02</span>
-        <div class="track-info">
-          <h3>[Song Title] <span class="ph-badge">placeholder</span></h3>
-          <span class="meta">Album / Single · 2023</span>
-        </div>
-        <span class="track-dur">3:47</span>
-        <div class="track-btn">▶</div>
-      </div>
-      <div class="track">
-        <span class="track-n">03</span>
-        <div class="track-info">
-          <h3>[Song Title] <span class="ph-badge">placeholder</span></h3>
-          <span class="meta">Album / Single · 2023</span>
-        </div>
-        <span class="track-dur">5:11</span>
-        <div class="track-btn">▶</div>
-      </div>
-      <div class="track ph-track">
-        <span class="track-n">04</span>
-        <div class="track-info">
-          <h3>[Send me your full discography / setlist and I'll load these in]</h3>
-          <span class="meta">Awaiting info from Ray</span>
-        </div>
-        <span class="track-dur">—:—</span>
-        <div class="track-btn">▶</div>
-      </div>
-    </div>
-
-    <div class="streaming-row">
-      <span class="streaming-label">Stream on</span>
-      <a href="#" class="streaming-link">Spotify</a>
-      <a href="#" class="streaming-link">Apple Music</a>
-      <a href="#" class="streaming-link">YouTube</a>
-      <a href="#" class="streaming-link">Bandcamp</a>
-    </div>
-  </div>
-</section>
-
-<!-- ── PULL QUOTE ── -->
-<div class="quote-banner">
-  <p class="quote-text">
-    "[A great line from a review, a booker, or a fan — something that makes a stranger feel something before they've heard a single note.]"
-    <span class="ph-badge">placeholder</span>
-  </p>
-  <p class="quote-attr">— [Publication or Name] · [Year]</p>
-</div>
-
-<!-- ── SHOWS ── -->
-<section class="shows" id="shows">
-  <p class="section-eyebrow">On the Road</p>
-  <h2>Upcoming <span>Shows</span></h2>
-
-  <div class="show-list">
-    <div class="show">
-      <div class="show-date"><span class="mo">Mar</span><span class="dy">??</span></div>
-      <div class="show-info">
-        <h3>[Venue Name] <span class="ph-badge">placeholder</span></h3>
-        <span>Nashville, TN · Doors 8pm</span>
-      </div>
-      <a href="#" class="show-tix">Tickets</a>
-    </div>
-    <div class="show">
-      <div class="show-date"><span class="mo">Apr</span><span class="dy">??</span></div>
-      <div class="show-info">
-        <h3>[Venue Name] <span class="ph-badge">placeholder</span></h3>
-        <span>Nashville, TN · Doors 9pm</span>
-      </div>
-      <a href="#" class="show-tix">Tickets</a>
-    </div>
-    <div class="show ph-show">
-      <div class="show-date"><span class="mo">—</span><span class="dy">—</span></div>
-      <div class="show-info">
-        <h3>Send me your full gig calendar</h3>
-        <span>Awaiting dates · I'll build this out properly</span>
-      </div>
-      <span class="show-tix" style="opacity:0.4;">—</span>
-    </div>
-  </div>
-</section>
-
-<!-- ── CONTACT ── -->
-<section class="contact" id="contact">
-  <div class="contact-bg-text">BOOK RAY</div>
-  <p class="section-eyebrow">Get in Touch</p>
-  <h2>Book. Connect. <em>Listen.</em></h2>
-  <p>For bookings, press inquiries, and everything else.</p>
-
-  <div class="contact-grid">
-    <div class="contact-card">
-      <div class="icon">✉</div>
-      <h3>Booking</h3>
-      <a href="mailto:ray@placeholder.com">ray@[youremail].com <span class="ph-badge">needed</span></a>
-    </div>
-    <div class="contact-card">
-      <div class="icon">📱</div>
-      <h3>Socials</h3>
-      <p>Instagram · Facebook<br><span class="ph-badge">links needed</span></p>
-    </div>
-    <div class="contact-card">
-      <div class="icon">🎵</div>
-      <h3>Press Kit</h3>
-      <a href="#">Download EPK <span class="ph-badge">coming</span></a>
-    </div>
-  </div>
-</section>
-
-<!-- ── FOOTER ── -->
 <footer>
-  <p>© 2026 <span>Ray Martin</span> · Nashville, TN · Site by <span>nullpoint design</span></p>
+  <div class="footer-credits">
+    <p>© 2026 <span>Ray Martin</span> · Nashville, TN</p>
+    
+    <a href="https://nullpointdesign.github.io" class="npd-signature">
+      <div class="npd-logo-box"><span>N</span></div>
+      <div class="npd-text">Project by <b>Null Point Design</b></div>
+    </a>
+  </div>
+
   <div class="social-row">
     <a href="#">Instagram</a>
     <a href="#">Facebook</a>
